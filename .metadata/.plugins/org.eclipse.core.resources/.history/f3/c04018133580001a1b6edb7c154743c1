@@ -60,7 +60,7 @@ private static final ArrayList<Contato> LISTA_CONTATOS = new ArrayList<>();
 		return "listar";
 	}
 	
-	@PostMapping("/contatos/editar")
+	@PostMapping("/contatos/edit")
 	public String edit(@ModelAttribute("contato") Contato contato ,Model model) {
 		
 		return "editForn";//cria uma pagina com esse nome
