@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css?family=Josefin+Sans');
+body{
+	margin:0;
+	padding:0;
+	font-family: 'Roboto',sans-serif;
+	font-family: 'Josefin Sans', sans-serif;
+	
+}
+header{
+	margin: 0;
+	
+}
+header nav{
+	background: #355;
+	height: 3em;
+}
+header nav ul{
+	margin: 0;
+	padding: 0;
+}
+header nav ul li{
+	list-style: none;
+	height:3em;
+	float:left;
+}
+header nav ul ul li a{
+	text decoration:none;
+	display:block;
+	height: 100%;
+	padding:0 1 em;
+	color:#888;
+}
+nav a :hover{
+	color:#fff;
+	background-color: 777;
+}
+header nav ul li:first-child {
+	font-size: 1,4 em ;
+	color:
+light blue
+}
+main{
+	padding:01em;
+}
+section main form div{
+	margin: 0 0 10px 0;
+}
+section main form div label{
+	display: blcock;
+}
+section main form div input{
+	width:20em;
+}
+section form div button div{
+	border:none;
+	padding:10 px  15 px ;
+	background-color: # 80aebd ;
+	color: #fff;
+}
+section main form button div: hover{
+	background-color: light blue;
+	cursor:pointer;
+}
+main section table{
+	border-collapse: collapse;
+}
+main section of the table, main section of the table th, main section of the table td{
+	border:1 px sólido # eee ;
+	fill:10 px  15 px ;
+}
+main section table tbody tr td a{
+	text-decoration: none;
+	color:# 80aebd ;
+}
+main section table tbody tr td a : hover{
+	text-decoration: underlined;
+	color:light blue;
+}
+main section table button of form tbody tr td{
+	border: none;
+	padding: 10 px 15px;
+	background-color:  # bd8088 ;
+	color:#fff;
+}
+main section table form button tbody tr td :hover{
+	background-color: # e6adb7 ;
+	cursor:pointer;
+}
+

@@ -1,0 +1,69 @@
+package contatos.com.br;
+
+import java.util.Date;
+
+public class Contato {
+
+	private String id;
+	private String nome;
+	private String telefone;
+	
+	
+	
+	private Date dia;
+	private Date mes;
+	private Date ano;
+	
+	public Contato() {
+		
+	}
+	public Contato(String id,String nome, String telefone) {
+		this.id = id;
+		this.telefone = telefone;
+		this.nome = nome;
+	}
+	
+	public boolean isNovo() {
+		return id == null;
+	}
+	
+	public String getNome() {
+		return nome;
+	}
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+	public String getTelefone() {
+		return telefone;
+	}
+	public void setTelefone(String telefone) {
+		this.telefone = telefone;
+	}
+	
+	
+	
+	
+	
+	public Date getDia() {
+		return dia;
+	}
+	public void setDia(Date dia) {
+		this.dia = dia;
+	}
+	public Date getMes() {
+		return mes;
+	}
+	public void setMes(Date mes) {
+		this.mes = mes;
+	}
+	public Date getAno() {
+		return ano;
+	}
+	public void setAno(Date ano) {
+		this.ano = ano;
+	}
+	
+	
+	
+	
+}

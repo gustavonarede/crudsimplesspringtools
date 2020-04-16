@@ -1,0 +1,31 @@
+package contatos.com.br;
+
+import java.util.ArrayList;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class ContatosControle {
+
+	private static final ArrayList<Contato> LISTA_CONTATOS = new ArrayList<>();
+	
+	static {
+		
+		LISTA_CONTATOS.add(new Contato("1","Maria","+55 62 992887340"));
+		LISTA_CONTATOS.add(new Contato("2","Luiz","+55 62 992887340"));
+		LISTA_CONTATOS.add(new Contato("3","Lucimar","+55 62 "));
+		LISTA_CONTATOS.add(new Contato("4","Adriano","+55 62 992887340"));
+		LISTA_CONTATOS.add(new Contato("5","Pedro","+55 62 992887340"));
+	}
+	
+	
+	@GetMapping("/")
+	public String index() {
+		return "index";
+	}
+	@GetMapping("/contatos")
+	public String listar() {
+		return "listar";
+	}
+}

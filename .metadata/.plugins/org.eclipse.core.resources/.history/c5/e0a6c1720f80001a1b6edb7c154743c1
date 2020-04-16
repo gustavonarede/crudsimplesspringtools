@@ -1,0 +1,5 @@
+package contatos.com.br;
+
+public interface ContatoRepository {
+
+}
