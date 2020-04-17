@@ -60,10 +60,14 @@ private static final ArrayList<Contato> LISTA_CONTATOS = new ArrayList<>();
 		return "listar";
 	}
 	
-	@GetMapping("/contatos/edit")
-	public String edit(@ModelAttribute("contato") Contato contato ,Model model) {
-		model.addAttribute("contato", contato);
-		return "formulario";
+	@PostMapping("/contatos/edit")
+	public static List<contato> edit() {
+		List<contato> = new ArrayList();
+		Contato contato;
+		try {
+			Connection conn =
+		}
+		return "lista";//cria uma pagina com esse nome
 		
 	}
 }

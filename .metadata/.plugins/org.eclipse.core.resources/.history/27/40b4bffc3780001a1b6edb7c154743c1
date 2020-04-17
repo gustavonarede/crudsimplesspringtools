@@ -51,17 +51,14 @@
 						<td th:text="${contato.dataNascimento}"></td>
 						
 						<td>
-							<form th:object="${contato}" th:action="@{/contatos/edit}" method="GET">
-							<input type="hidden" th:name="contato" th:value="${contato.id}" />
+							<form th:object="${contato}" th:action="@{/contatos/edit}" method="POST">
+							<input type="hidden" th:text="${contato.id}" />
 							<button>Editar</button>
 							</form>
 						</td>
 						
 						<td>
-							<form th:action="@{/contatos/{contato}(contato=${contato.id})}"
-								th:method="delete">
-								<button>Remover</button>
-								</form>
+							
 						</td>
 					</tr>
 				</tbody>
