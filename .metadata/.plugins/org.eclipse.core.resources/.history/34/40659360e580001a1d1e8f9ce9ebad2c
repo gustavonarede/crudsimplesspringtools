@@ -36,7 +36,7 @@
 				
 				
 					<label>Código: </label> 
-				<input name="id" th: field="*{id}" readonly="readonly">
+				
 				
 				<div>
 					<label>Nome: </label> 
