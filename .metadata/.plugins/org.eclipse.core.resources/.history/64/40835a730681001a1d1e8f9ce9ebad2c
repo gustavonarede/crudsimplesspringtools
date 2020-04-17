@@ -3,13 +3,10 @@ package contatos.com.br;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -68,26 +65,13 @@ public class ContatosControle {
 		return "listar";
 	}*/
 	
-	/*@GetMapping("/contatos/edit")
+	@GetMapping("/contatos/edit")
 	public String edit(@ModelAttribute("contato") Contato contato ,Model model) {
 		model.addAttribute("contato", contato);
 		return "formulario";
 		
-	}*/
-	@PutMapping(value="/{id}")
-	public ResponseEntity update(@PathVariable("id")Integer id,
-			@RequestBody Contato contato) {
-		 return repositorio.findById(id)
-		           .map(record -> {
-		               record.setName(contact.getName());
-		               record.setTelefone(contato.getTelefone());
-		               record.setdataNascimento(contact.getdataNascimento());
-		               Contact updated = repositorio.save(record);
-		               return ResponseEntity.ok().body(updated);
-		           }).orElse(ResponseEntity.notFound().build());
-		}
 	}
-
+}
 
 	
 	//@GetMapping("/contatos/novo")
