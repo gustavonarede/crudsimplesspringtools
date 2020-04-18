@@ -6,6 +6,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface ContatoRepository extends JpaRepository<Contato, Integer> {
 
-	public List<Contato> findAll(); // o nome do metodo é a consulta 
+	//public List<Contato> findAll(); // o nome do metodo é a consulta 
 	
 }

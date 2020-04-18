@@ -12,14 +12,10 @@ import javax.persistence.Id;
 import org.hibernate.annotations.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.NoArgsConstructor;
-
-
-
+@Data
 @Entity
-@Table(name="mydata")
+
 public class Contato implements Serializable{
 	
 

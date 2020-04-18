@@ -5,7 +5,8 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.cglib.core.CollectionUtils;
+import org.springframework.jca.cci.RecordTypeNotSupportedException;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -16,46 +17,53 @@ public class ContatoServico {
 	 
 	 public List<Contato> getAllContatos(){
 		 List<Contato> resultado = (List<Contato>)repository.findAll();
-		 if(resultado .size()> 0) {
+		 if(resultado.size()>0) {
 			 return resultado;
-		 }else{
+		 }else {
 			 return new ArrayList<Contato>();
 		 }
-	 }
-	 public Contato getContatoDeId(Integer id) throws RecordNotFoundException{
-		 Optional<Contato> contato = repository.findById(id);
+		 
+
+
+			 
+		 }
+	 public Contato getContatotoById(Integer id) throws RecordTypeNotSupportedException {
+		 Optional<Contato>contato  = repository.findById(id);
 		 if(contato.isPresent()) {
 			 return contato.get();
 		 }else {
-			 throw new RecordNotFoundException("\r\n" + 
-			 		"Não existe registro de contato para o ID fornecido");
+			 throw new RecordTypeNotSupportedException("Não exiiste contato nesse id");
 		 }
 	 }
 	 public Contato createOrUpdateContato(Contato contato) {
 		 if(contato.getId() == null) {
-			 contato = repository .save(contato);
+			 contato = repository.save(contato);
 			 return contato;
 		 }else {
 			 Optional<Contato>contato = repository.findById(contato.getId());
 			 if(contato.isPresent()) {
 				 Contato newContato = contato.get();
-				 newContato.setNome(contato.getNome());
-				 newContato.setTelefone(contato.getTelefone());
+				 newContato.setNome();
+				 newContato.setTelefone();
+				 newContato.setEmail(email);
+				 newContato.setDataNascimento();
 				 
 				 newContato = repository.save(newContato);
+				 
 				 return newContato;
 			 }else {
-				 contato. = repository.save(contato);
+				 contato = repository.save(contato);
 				 return contato;
 			 }
 		 }
 	 }
-	 public void deleteContatoDeId(Integer id)throws RecordNotFoundException{
-		 Optional<Contato> contato = repository.findById(id);
+	 public void deleteContatoById(Integer id) throws RecordTypeNotSupportedException{
+		 Optional<Contato>contato = repository.findById(id);
 		 if(contato.isPresent()) {
 			 repository.deleteById(id);
 		 }else {
-			 throw new RecordNotFoundException("No contato record exist for given id");
+			 throw new RecordNotFoundException("Não existe contato");
 		 }
 	 }
-}
+	 
+	}
