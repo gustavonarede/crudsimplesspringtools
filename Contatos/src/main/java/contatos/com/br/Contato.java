@@ -6,34 +6,29 @@ import java.time.LocalDate;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import org.hibernate.annotations.Table;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import lombok.Data;
-@Data
+
+
 @Entity
+public class Contato implements Serializable {
 
-public class Contato implements Serializable{
-	
+    @Id
+    @GeneratedValue
+    private Integer id;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
-	@Column(name="nome")
-	private String nome;
-	
-	@Column(name="email", nullable=false, length=200)
-    private String email;
-	@Column(name="telefone")
-	private String telefone;
-	
-	@Column(name="dataNascimento")
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
-	private LocalDate dataNascimento;
+    @Column
+    private String nome;
+
+    @Column
+    private String telefone;
+
+    @Column
+    @DateTimeFormat(pattern = "dd/MM/yyyy")
+    private LocalDate dataNascimento;
 
 	public Integer getId() {
 		return id;
@@ -67,15 +62,5 @@ public class Contato implements Serializable{
 		this.dataNascimento = dataNascimento;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 	
-	
-	
-
 }

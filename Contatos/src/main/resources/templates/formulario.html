@@ -1,62 +1,78 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" 
-	xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width"/>
-
-<title>Contatos</title>
-
-<!-- <link rel="stylesheet" th:href="@{/css/estilo.css}" /> -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Add Employee</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+<link rel="stylesheet"
+	href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 </head>
 
 <body>
-	
-		<div class="container my-5">
-		<h3> Adicionar Contato</h3>
-				
-	 <div class="card">
-            <div class="card-body">
-                <div class="col-md-10">
-                    <form action="#" th:action="@{/createContato}" th:object="${contato}"
-                                                                       method="post">
-                        <div class="row">
-                            <div class="form-group col-md-8">
-                                <label for="name" class="col-form-label">Nome</label> 
-                                <input type="text" th:field="*{Nome}" class="form-control"
-                                            id="Nome" placeholder="Nome" />
-                            </div>
-                            <div class="form-group col-md-8">
-                                <label for="name" class="col-form-label">Data de Nascimento</label> 
-                                <input type="text" th:field="*{dataNascimento}" class="form-control"
-                                            id="dataNascimento" placeholder="dataNascimento" />
-                            </div>
-                            <div class="form-group col-md-8">
-                                <label for="email" class="col-form-label">Email</label> 
-                                <input type="text" th:field="*{email}" class="form-control"
-                                            id="email" placeholder="Email Id" />
-                            </div>
-                            <div class="form-group col-md-8">
-                                <label for="email" class="col-form-label">Telefone</label> 
-                                <input type="text" th:field="*{telefone}" class="form-control"
-                                            id="telefone" placeholder="telefone" />
-                            </div>
- 
-                            <div class="col-md-6">
-                                <input type="submit" class="btn btn-primary" value=" Submit ">
-                            </div>
- 
-                            <input type="hidden" id="id" th:field="*{id}">
-     
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
+	<header>
+		
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" th:href="@{/}">Contatos</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <a class="nav-link" th:href="@{/contatos/listar}">Lista <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/contatos/novo}">Novo</a>
+      </li>
+      
+    </ul>
+  </div>
+</nav>
+	</header>
+		<section>
+			<h1>Cadastro contatos</h1>
+		</section>
+			<div class="container my-5">
+				<h3>Add Employee</h3>
+				<div class="card">
+					<div class="card-body">
+						<div class="col-md-10">
+							<form th:object="${contato}" th:action="@{/contatos/salvar}"
+								method="POST">
+								<input type="hidden" id="id" th:field="*{id}">
+								<div class="row">
+									<div class="form-group col-md-8">
+										<label for="nome" class="col-form-label">Nome</label> <input
+											type="text" th:field="*{nome}" class="form-control" id="nome"
+											placeholder="Digite seu nome..." />
+									</div>
+
+									<div class="form-group col-md-8">
+										<label for="telefone" class="col-form-label">Telefone</label>
+										<input type="text" th:field="*{telefone}" class="form-control"
+											id="telefone" placeholder="Digite seu telefone..." />
+									</div>
+									<div class="form-group col-md-8">
+										<label for="dataNascimento" class="col-form-label">Data
+											Nascimento</label> <input type="text" th:field="*{dataNascimento}"
+											class="form-control" id="dataNascimento"
+											placeholder="Digite seu telefone..." />
+									</div>
+
+									<div class="col-md-6">
+										<button class="btn btn-primary" th:if="${id}">Atualizar</button>
+										<button class="btn btn-primary" th:if="!(${id})">Salvar</button>
+									</div>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 </body>
 
 </html>

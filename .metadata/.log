@@ -5475,3 +5475,36 @@ Caused by: org.eclipse.lsp4j.jsonrpc.ResponseErrorException: Internal error.
 	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
 	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:20:22.162
+!MESSAGE Preparing classpath changed notification Contatos
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:20:22.164
+!MESSAGE exists = false open = true => deleted = true
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:20:22.166
+!MESSAGE buffering callback sts4.classpath.QFjBeZDG Contatos true 0
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:20:22.167
+!MESSAGE executing callback sts4.classpath.QFjBeZDG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:20:22.175
+!MESSAGE executing callback sts4.classpath.QFjBeZDG SUCCESS [done]
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:21:09.906
+!MESSAGE Preparing classpath changed notification Contatos
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:21:09.908
+!MESSAGE exists = true open = true => deleted = false
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:21:09.919
+!MESSAGE classpath=124 entries
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:21:09.931
+!MESSAGE buffering callback sts4.classpath.QFjBeZDG Contatos false 124
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:21:09.932
+!MESSAGE executing callback sts4.classpath.QFjBeZDG 1 batched events
+
+!ENTRY org.springframework.tooling.ls.eclipse.commons 1 0 2020-04-18 17:21:09.950
+!MESSAGE executing callback sts4.classpath.QFjBeZDG SUCCESS [done]
